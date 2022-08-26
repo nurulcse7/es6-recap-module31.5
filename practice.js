@@ -9,14 +9,25 @@ const bookName = 'Al-Quran';
 /*২. টেম্পলেট স্ট্রিং দিয়ে একটা স্ট্রিং তৈরি করো। সেটার মধ্যে উপরে ডিক্লেয়ার করা ভেরিয়েবল এর মান ডাইনামিক ভাবে বসাও। 
     একইভাবে উপরে একটা অবজেক্ট ডিক্লেয়ার করো। 
     এবং ডাইনামিকভাবে উপরের অবজেক্ট এর দুইটা প্রপার্টি এর মান তোমার টেমপ্লেট স্ট্রিং এর মধ্যে বসাও। */
-const nationalAnthem = `
-Amar sonar bangla
-ami tomai valobasi
-chirodin tomar akash
-`
-const myAge = 30;
-const yourAge = 40;
-const totalAge = `Addition of ${myAge} and ${yourAge} is ${myAge + yourAge}`;
+const person1 = {
+     name1: 'Nurul Islam',
+     address: 'Gulshan',
+     job: 'Web Developer',
+     salary: 200000,
+     phone: '01777777777',
+     hobby: 'Blockchain Developer'
+}
+const totalAge = `${person1.name1}`;
+// console.log(totalAge)
+
+// const nationalAnthem = `
+// Amar sonar bangla
+// ami tomai valobasi
+// chirodin tomar akash
+// `
+// const myAge = 30;
+// const yourAge = 40;
+// const totalAge = `Addition of ${myAge} and ${yourAge} is ${myAge + yourAge}`;
 // console.log(totalAge); // Addition of 30 and 40 is 70
 
 /*৩.১ একটা প্যারামিটার ওয়ালা arrow ফাংশন ডিক্লেয়ার করো। 
@@ -28,9 +39,7 @@ const result = divisible(10);
 /*৩.২ তুমি দুইটা প্যারামিটার ওয়ালা একটা অ্যারো ফাংশন লিখবে। 
      সেই ফাংশনের ভিতরে কাজ হবে। প্রত্যেকটা ইনপুট প্যারামিটার এর সাথে ২ যোগ করবে তারপর যোগফল দুইটা গুণ করবে। 
      ক্যামনে করবে সেটা চিন্তা করে বের করার চেষ্টা করো */
-const numbers = [3, 5];
-const towNum = numbers.map(n => n + 2);
-//  console.log(towNum) // [ 5, 7 ]
+const multiply2 = (a, b) => (a + 2) * (b + 2)
 
 /*৩.৩ এইবার তিনটা প্যারামিটার ওয়ালা একটা অ্যারো ফাংশন ডিক্লেয়ার করো। 
      যেই ফাংশনের কাজ হবে তিনটা প্যারামিটার নিয়ে সেই তিনটা প্যারামিটারকে গুণ করে সেই রেজাল্ট রিটার্ন করবে। */
@@ -41,9 +50,12 @@ const result1 = multiply(7, 8, 2);
 /*৩.৪ এইবার দুইটা প্যারামিটার ওয়ালা একটা অ্যারো ফাংশন নিবে।
     ওই arrow ফাংশনটা হবে অনেকগুলা লাইনের। সেখানে প্রত্যেকটা ইনপুট প্যারামিটার এর সাথে ২ যোগ করবে তারপর যোগফল দুইটা গুণ করবে।
      ক্যামনে করবে সেটা চিন্তা করে বের করার চেষ্টা করো। */
-const numbers1 = [3, 5];
-const towNum1 = numbers1.map(n => n + 2);
-//  console.log(towNum1) // [ 5, 7 ]
+const multiply3 = (a, b) => {
+     let value1 = a + 2;
+     let value2 = b + 2;
+     let value3=value1*value2;
+     return value3
+}
 
 
 /*৪. [হোম ওয়ার্ক] একটু গুগলে সার্চ দাও: javascript function declaration vs arrow function তারপর কয়েকটা আর্টিকেল পড়ে বুঝার চেষ্টা করো। */
@@ -113,7 +125,7 @@ let personalData = {
      salary: 200000,
      phone: '01777777777',
      hobby: 'Blockchain Developer',
-          location: [
+     location: [
           {
                latitude: '34.5, 37.8',
                longitude: '98.77, 58.7',
@@ -122,7 +134,9 @@ let personalData = {
           }
      ]
 };
-const myCity = personalData.location.map(town => town.city);
+const myCity = personalData.location[0].city
+console.log(myCity); // [ 'Dhaka' ]
+// const myCity = personalData.location.map(town => town.city);
 // console.log(myCity); // [ 'Dhaka' ]
 
 /*১২. উপরের অবজেক্ট এ ডট এর আগে যে প্রশ্নবোধক চিহ্ন দিয়ে যে অপশনাল চেইনিং করা যায়। সেটা একটু প্রাকটিস করো। */
@@ -133,7 +147,7 @@ let personalData1 = {
      salary: 200000,
      phone: '01777777777',
      hobby: 'Blockchain Developer',
-          location: [
+     location: [
           {
                latitude: '34.5, 37.8',
                longitude: '98.77, 58.7',
@@ -143,4 +157,4 @@ let personalData1 = {
      ]
 };
 const myCity1 = personalData1?.location?.map(town => town?.city);
-console.log(myCity1); // [ 'Dhaka' ]
+// console.log(myCity1); // [ 'Dhaka' ]
