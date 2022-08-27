@@ -134,10 +134,9 @@ let personalData = {
           }
      ]
 };
-const myCity = personalData.location[0].city
+// const myCity = personalData.location.forEach(item => console.log(item.city)) // Dhaka
+const myCity = personalData.location.map(town => town.city);
 console.log(myCity); // [ 'Dhaka' ]
-// const myCity = personalData.location.map(town => town.city);
-// console.log(myCity); // [ 'Dhaka' ]
 
 /*১২. উপরের অবজেক্ট এ ডট এর আগে যে প্রশ্নবোধক চিহ্ন দিয়ে যে অপশনাল চেইনিং করা যায়। সেটা একটু প্রাকটিস করো। */
 
